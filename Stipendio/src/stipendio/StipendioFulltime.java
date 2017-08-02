@@ -20,17 +20,14 @@ public class StipendioFulltime extends Stipendio{
     }
 
     @Override
-    public double stipMensile(int meseCorrente) {
+        public double stipMensile(int meseCorrente) {
         double stipMese = 0;
         double totPremi=0;
         
-        if (meseCorrente > 0 && meseCorrente<11){
-            try {
-                  stipMese=(RAL/mensilita)+totPremiMensili(meseCorrente);
-            } catch (Exception ex) {
-                System.out.println("Non è possibile calcolare lo stipendio");
-            }
-            };
+        if (meseCorrente > 0 && meseCorrente<11)
+            stipMese=(RAL/mensilita)+totPremiMensili(meseCorrente);
+        else 
+            System.out.println("Non funziona");
       
 
         return stipMese;
