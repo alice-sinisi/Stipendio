@@ -24,11 +24,14 @@ public class StipendioFulltime extends Stipendio{
         double stipMese = 0;
         double totPremi=0;
         
-        if (meseCorrente > 0 && meseCorrente<11)
-            stipMese=(RAL/mensilita)+totPremiMensili(meseCorrente);
-        else 
-            System.out.println("Non funziona");
-      
+            if (meseCorrente<0 && meseCorrente >11)
+            throw new Exception("Il mese inserito deve essere maggiore di 0 e minore di 11");
+        
+       // if (meseCorrente > 0 && meseCorrente<11)
+        //    stipMese=(RAL/mensilita)+totPremiMensili(meseCorrente);
+       // else 
+        //    System.out.println("Non funziona");
+      stipMese=(RAL/mensilita)+totPremiMensili(meseCorrente);
 
         return stipMese;
     }
